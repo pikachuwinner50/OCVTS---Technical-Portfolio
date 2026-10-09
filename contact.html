@@ -9,6 +9,46 @@
         <main>
             <h1> CONTACT PAGE </h1>
             <h2>This is how you discover how to find me</h2>
+
+            <section id="contact">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <!-- Form fields here -->
+                     <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Your Name">
+                        <input type="email" name="email" placeholder="Your Email" required>.
+                        <textarea name="message" rows="5" placeholder="Your Message"></textarea>.
+                        <button type="submit">Send Message 🚀</button>
+                        <button type="button">Clear Form</button>
+                        <button type="button">Print Form</button>
+                        <select name="ProjectType" multiple size="4"></select>
+                            <option value="Java">Java</option>
+                            <option value="Python" selected>Python</option>
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+
+                            <fieldset>
+                                <legend>Budget:</legend>
+                                <input type="radio" id="low budget" name="Budget" value="low budget" checked>
+                                <label for="low budget">$1k-$5k</label><br>
+                                <input type="radio" id="medium budget" name="Budget" value="medium budget">
+                                <label for="medium budget">$5k-$15k</label><br>
+                                <input type="radio" id="high budget" name="Budget" value="high budget">
+                                <label for="high budget">$15k+</label>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>newsletter:</legend>
+                                <input type="checkbox" id="coding" name="interests" value="coding" checked>
+                                <label for="coding">Coding</label><br>
+                                <input type="checkbox" id="design" name="interests" value="design">
+                                <label for="design">Design</label><br>
+                                <input type="checkbox" id="music" name="interests" value="music">
+                                <label for="music">Music</label>
+                            </fieldset>
+
+                    </form>
+                </section>
         </main>
     </body>
 </html>
