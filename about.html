@@ -8,8 +8,8 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <meta name="author" content="Your name">
          <meta name="description" content="A portfolio showcasing my web development work.">
-        <link rel="stylesheet" href="styles.css">
-        <style>
+         <link rel="stylesheet" href="css/style.css">
+            <style>
             body {
                 background-color: #f8fafc;
                 text-color: #1e293b;
@@ -31,10 +31,8 @@
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a link="home.html">Home</a></li>
-                <li><a link="projects.html">Projects</a></li>
-                <!-- <li><a link="about.html">About Me</a></li> -->
-                <!-- <li><a link="contact.html">Contact</a></li> -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
             </ul>
         </nav>
         
@@ -96,17 +94,23 @@
                     <!-- Form fields here -->
                      <form action="#" method="POST">
                         <input type="text" name="name" placeholder="Your Name">
-                        <input type="email" name="email" placeholder="Your Email" required>.
-                        <textarea name="message" rows="5" placeholder="Your Message"></textarea>.
+                        <br>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <br>
+                        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+                        <br>
                         <button type="submit">Send Message 🚀</button>
+                        <br>
                         <button type="button">Clear Form</button>
+                        <br>
                         <button type="button" onclick="window.print()">Print Form</button>
+                        <br>
                         <select name="ProjectType" multiple size="4"></select>
                             <option value="Java">Java</option>
                             <option value="Python" selected>Python</option>
                             <option value="HTML">HTML</option>
                             <option value="CSS">CSS</option>
-
+                            <br>
                             <fieldset>
                                 <legend>Budget:</legend>
                                 <input type="radio" id="low budget" name="Budget" value="low budget" checked>
@@ -116,7 +120,7 @@
                                 <input type="radio" id="high budget" name="Budget" value="high budget">
                                 <label for="high budget">$15k+</label>
                             </fieldset>
-
+                            <br>
                             <fieldset>
                                 <legend>newsletter:</legend>
                                 <input type="checkbox" id="coding" name="interests" value="coding" checked>
@@ -126,7 +130,7 @@
                                 <input type="checkbox" id="music" name="interests" value="music">
                                 <label for="music">Music</label>
                             </fieldset>
-
+                            <br>
                     </form>
 
          <!-- Footer -->
