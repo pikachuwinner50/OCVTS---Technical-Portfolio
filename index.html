@@ -4,19 +4,12 @@
     <head>
         <title>Jacob Hadley - Portfolio</title>
         <!-- Meta information goes here-->
-         <meta charset="UTF-*">
+         <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <meta name="author" content="Your name">
          <meta name="description" content="A portfolio showcasing my web development work.">
          <link rel="stylesheet" href="css/style.css">
-            <style>
-             body {
-                 background-color: #f8fafc;
-                 text-color: #1e293b;
-                 font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-                 line-height: 1.6;
-             }
-         </style>
+        <title>Home Page</title>
     </head>
     <body>
         <!-- Portfolio Website -->
@@ -91,12 +84,14 @@ No, <br> does not need a closing tag because it serves that function itself.
 <!-- 
 The Semantic difference between <strong>/<b> and <em>/<i> is that Strong makes the text Bold, making it stand out more, while Em italizes it.
 You can nest a Strong inside a em. It will italize and bold the text at the same time.
-The browser should just condense extra spaces into just a single space. -->
+The browser should just condense extra spaces into just a single space. 
+-->
 
 <!-- 
 blockquote creates a quote that can be placed into multiple blocks, and is preferred for extended quotes. q will stay in the line it is referenced in, not creating any new lines at all
 Cite is used to cite sources, and can? be used for both people and URLS
-blockquote does add default indentaion in web browsers -->
+blockquote does add default indentaion in web browsers 
+-->
 
 
 <!-- Where did part 3 go? -->
@@ -106,72 +101,104 @@ blockquote does add default indentaion in web browsers -->
 <!-- 
 The accessibility benefit of <header> or <div class="Header" is that <header> is actually recognized by screen readers and spoken as such
 Yes, you can have multiple header tags in a single page, it should not break anything
-<body> contains everything that is diplayed on the website, and is mandatory while <main> is just optional. -->
+<body> contains everything that is diplayed on the website, and is mandatory while <main> is just optional. 
+    -->
 
 <!-- 
 Yes you can  have a section without a heading, but it si discourged as people will not know what the section is about easily
 <section> is semantic, meaning it can be picked up by screen readers while a <div> can not.
-i think it depends on the context. You can do both, but not entiriely sure which one to use in which situation -->
+i think it depends on the context. You can do both, but not entiriely sure which one to use in which situation 
+-->
 
 <!-- Chapter 5 -->
 
 <!-- 
 The default bullet style for <ul> is a filled in circle
 There is no limit to how deep you can nest a list, so if youy wanted to, you could go 100 nests in
-That would most likely break some stuff because it is a div, and cause the <ul> to stop working -->
+That would most likely break some stuff because it is a div, and cause the <ul> to stop working 
+    -->
 
 <!-- 
 No, as <ol> does not have any semantic impact on the code
 Yes you can. You would use the start attribute to start an <ol> at a number that is not one
-<ol> works normally, counting up. <ol> reversed counts down -->
+<ol> works normally, counting up. <ol> reversed counts down 
+    -->
 
 <!-- 
 The advantage of putting headers not in the body is that is provides the semantic meaning it is meant to provide, and if it was in the body, it would not be able to show off its semantics
 Yes you can put multiple <Tbody> tags inside a <table>. Makes it good for if you want to organize stuff into sub charts
-The remaining rows will not look like they have anything like boxes, making the chart look weird -->
+The remaining rows will not look like they have anything like boxes, making the chart look weird 
+-->
 
 <!-- Chapter 6 -->
 
 <!-- 
 the alt attribute is important for accessibility because it allows people to read the description of the image when image fails to load/blind people
 the browser will not be able to load the image. Alt text still appears
-Yes, it can be placed above, however there will be no effect at all due to it being rendered in the browser below the image -->
+Yes, it can be placed above, however there will be no effect at all due to it being rendered in the browser below the image 
+-->
 
 <!-- 
 You can do it with both, but resizing with CSS is pretty much like some sort of backup should HTML fail for some reason, an extra way for it to secure it works
 the difference between <alt> and <title> is that <alt> is used for images and has semantic meaning, while <title> does not
-lazy loading is not calling for resources such as images and the like till the user needs them (aka when scrolling to them) and is enabled by loading=lazy -->
+lazy loading is not calling for resources such as images and the like till the user needs them (aka when scrolling to them) and is enabled by loading=lazy 
+-->
 
 <!-- Chapter 7 -->
 
 <!-- 
 GET is used to retrieve data from a server, while POST sends data to a server
 the required field specifies that an input must be filled out and you cannot submit form without it
-Yes, you can have multiple fields on a page, they all act separately -->
+Yes, you can have multiple fields on a page, they all act separately 
+-->
 
 <!-- 
 If radio buttons do not have the same group name, they will not be treated as a same group and you will be able to select mutliple of them
 the default for checkboxs if no value is set is on
-Yes, you can. You would use the selected attribute -->
+Yes, you can. You would use the selected attribute 
+-->
 
 <!-- 
 it will default to a submit button, so might cause trouble if it is not intended to sumbit the form
 Yes, you can use HTML on buttons, because it will help to style them and make them more user-friendly
-<button> can serve other purposes besides submitting forms while a <input type="submit"> is specifically for submitting forms -->
+<button> can serve other purposes besides submitting forms while a <input type="submit"> is specifically for submitting forms 
+    -->
 
 <!-- Chapter 8 -->
 
 <!-- 
 The three ways to code CSS are Internal, External, and Inline. Internal is best for a single file
 CSS goes in head. it goes here because it is the metadata, not visible on the page.
-Inline style overrules internal style -->
+Inline style overrules internal style 
+-->
 
 <!-- 
 the difference between rem and px is that px is fixed depending on what you set it, while rem is relative to the root (default 16px)
 you should use serif font for headings and sans-serif for body text because serif is relatively easy to read
-a class selector has a higher usage priority than an element selector or smth, idrk what the question was asking :P -->
+a class selector has a higher usage priority than an element selector or smth, idrk what the question was asking :P 
+-->
 
 <!-- 
 the LVHA order for link psuedo classes is link, visited, hover, active
 a:visited is limited by browsers to prevent tracking of visited websites by people who might want to yoink your data
-transition animites changes to a CSS property over time that it is animated -->
+transition animites changes to a CSS property over time that it is animated 
+-->
+
+<!-- Chapter 9 -->
+
+<!-- 
+the difference between padding and margin is that padding is inside a element's border, while margin is not inside, but outside.
+They fuse together when they are collapsed
+Yes it does. it applies outside of any fixed width/height and adds the amount of padding to it 
+-->
+
+<!-- 
+a border is part of a element, meaning it needs to be inside, while outline is outside the element
+Yes you can using border-top-style, border-bottom-style, and such
+it will turn it into a circle
+-->
+
+<!-- 
+It will center the container with its parent class
+It is not fixed so will allow the container to shrink for smaller screens
+It prevents text and other images from going right up against the edge, allowing it to be more readable -->
