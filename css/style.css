@@ -5,9 +5,21 @@ body {
     line-height: 1.6;
 }
 
-:is h1, h2. h3, h4, h5, h6 {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Georgia', 'Times New Roman', serif;
-    text-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+code, pre, kbd, samp, .technical-term {
+    font-family: 'Courier New', monospace;
+}
+
+input, select, textarea, button {
+    font-family: inherit;
 }
 
 h1 { 
@@ -76,3 +88,61 @@ aside {
 }
 /* for alternate "devtools" :D */
 
+h1 { 
+    font-size: 2.5rem; 
+}
+h2 { 
+    font-size: 2rem;
+}
+p { 
+    font-size: 1rem; 
+}
+
+html {
+    font-size: 16px;
+}
+
+.tagline { 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav a { 
+    text-transform: uppercase;
+    font-size: 0.85rem;
+
+}
+blockquote { 
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.skills { 
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; gap: 10px;
+}
+.skills li { 
+    background: var(--primary);
+    color: white;
+    /* padding: 8px 16px; */
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+table { 
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td { 
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+}
+
+tr:nth-child(even) { 
+    background: #f1f5f9; 
+}
