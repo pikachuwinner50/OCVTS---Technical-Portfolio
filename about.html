@@ -85,52 +85,58 @@
              </ol>
         </section>
         <!-- Projects Section-->
-                     <section id="contact">
-                <h2>Contact Me</h2>
-                <form id="contactForm">
-                    <!-- Form fields here -->
-                     <form action="#" method="POST">
-                        <input type="text" name="name" placeholder="Your Name">
-                        <br>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <br>
-                        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
-                        <br>
-                        <button type="submit">Send Message 🚀</button>
-                        <br>
-                        <button type="button">Clear Form</button>
-                        <br>
-                        <button type="button" onclick="window.print()">Print Form</button>
-                        <br>
-                        <select name="ProjectType" multiple size="4"></select>
-                            <option value="Java">Java</option>
-                            <option value="Python" selected>Python</option>
-                            <option value="HTML">HTML</option>
-                            <option value="CSS">CSS</option>
-                            <br>
-                            <fieldset>
-                                <legend>Budget:</legend>
-                                <input type="radio" id="low budget" name="Budget" value="low budget" checked>
-                                <label for="low budget">$1k-$5k</label><br>
-                                <input type="radio" id="medium budget" name="Budget" value="medium budget">
-                                <label for="medium budget">$5k-$15k</label><br>
-                                <input type="radio" id="high budget" name="Budget" value="high budget">
-                                <label for="high budget">$15k+</label>
-                            </fieldset>
-                            <br>
-                            <fieldset>
-                                <legend>newsletter:</legend>
-                                <input type="checkbox" id="coding" name="interests" value="coding" checked>
-                                <label for="coding">Coding</label><br>
-                                <input type="checkbox" id="design" name="interests" value="design">
-                                <label for="design">Design</label><br>
-                                <input type="checkbox" id="music" name="interests" value="music">
-                                <label for="music">Music</label>
-                            </fieldset>
-                            <br>
-                    </form>
+         <section id="contact">
+            <h2>Contact Me</h2>
 
-         <!-- Footer -->
+            <form id="contactForm">
+                <!-- Form fields here -->
+                 <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" autocomplete="name">
+                    <br>
+                    <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
+                    <br>
+                    <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+                    <br>
+                    <button type="submit">Send Message 🚀</button>
+                    <br>
+                    <button type="button">Clear Form</button>
+                    <br>
+                    <button type="button" onclick="window.print()">Print Form</button>
+                    <br>
+                    <select name="ProjectType" multiple size="4"></select>
+                    <option value="Java">Java</option>
+                    <option value="Python" selected>Python</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <br>
+                    <fieldset>
+                        <legend>Budget:</legend>
+                        <input type="radio" id="low budget" name="Budget" value="low budget" checked>
+                        <label for="low budget">$1k-$5k</label><br>
+                        <input type="radio" id="medium budget" name="Budget" value="medium budget">
+                        <label for="medium budget">$5k-$15k</label><br>
+                        <input type="radio" id="high budget" name="Budget" value="high budget">
+                        <label for="high budget">$15k+</label>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>newsletter:</legend>
+                        <input type="checkbox" id="coding" name="interests" value="coding" checked>
+                        <label for="coding">Coding</label><br>
+                        <input type="checkbox" id="design" name="interests" value="design">
+                        <label for="design">Design</label><br>
+                        <input type="checkbox" id="music" name="interests" value="music">
+                        <label for="music">Music</label>
+                    </fieldset>
+                    <label for="referral">How did you hear about me?</label>
+                    <input type="text" id="referral" name="referral" list="referral-options" placeholder="Choose or type an answer">
+                    <datalist id="referral-options">
+                        <option value="Searching"></option>
+                        <option value="Discord"></option>
+                        <option value="Friend"></option>
+                    </datalist>
+                    <br>
+                    </form>
+        <!-- Footer -->
     </body>
- 
 </html>

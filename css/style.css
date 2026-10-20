@@ -146,3 +146,18 @@ th {
 tr:nth-child(even) { 
     background: #f1f5f9; 
 }
+
+.timeline { 
+    list-style: none;
+    counter-reset: year;
+}
+.timeline li { 
+    padding-left: 40px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 20px;
+}
+
+::before {
+    counter-increment: year
+    text-align left;
+}
