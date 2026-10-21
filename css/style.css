@@ -1,6 +1,6 @@
-* {
+/* * {
   border: .1rem solid red;
-}
+} */
 /* for alternate "devtools" :D */
 
 
@@ -9,6 +9,7 @@ body {
     color: #1e293b;
     font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
     line-height: 1.6;
+    background: linear-gradient(to right, #f8fafc, #e2e8f0)
 }
 
 body {
@@ -29,19 +30,23 @@ input, select, textarea, button {
 }
 
 h1 { 
-    color: #2563eb;
+    /* color: #0efcf0; */
     font-size: 3rem;
-    text-shadow: .1rem .1rem .2rem rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #000000 0%,#1e40af 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent
 }
 
 h2 { 
-    color: #1e40af;
-    margin-bottom: 2rem;
-    margin-top: 0rem;
+    color: #0efcf0;
+    margin-bottom: 20px;
+    margin-top: 0px;
 }
 
 h3 { 
-    color: #475569;
+    color: #0efcf0;
     font-weight: 600;
 }
 
@@ -62,43 +67,43 @@ a:visited {
  }
 
 section {
-    padding: 6rem 0;
+    padding: 60px 0;
     margin-bottom: 0;
-    border-bottom: .1rem solid #e2e8f0;
+    border-bottom: 10px solid #e2e8f0;
 }
 
 nav {
-    padding: 1.5rem 0;
+    padding: 15px 0;
 }
 
 aside {
-    border-left: .4rem solid #f59e0b;
-    padding-left: 2rem;
+    border-left: 4px solid #f59e0b;
+    padding-left: 20px;
 }
 
 .project-card {
-    border: .1rem solid #e2e8f0;
-    border-radius: .8rem;
-    border: .1rem solid #cbd5e1;
-    border-radius: .6rem image;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px image;
 }
 
 .container {
     max-width: 400rem;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 20px;
 }
 
 
 h1 { 
-    font-size: 2.5rem; 
-    text-shadow: .1rem .1rem .2rem rgba(0,0,0,0.1);
+    font-size: 25px; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 h2 { 
-    font-size: 2rem;
+    font-size: 20px;
 }
 p { 
-    font-size: 1rem; 
+    font-size: 10px; 
 }
 
 html {
@@ -108,7 +113,7 @@ html {
 
 .tagline { 
     text-transform: uppercase;
-    letter-spacing: .2rem;
+    letter-spacing: 2px;
 }
 nav a { 
     text-transform: uppercase;
@@ -123,22 +128,24 @@ blockquote {
 .skills { 
     list-style: none;
     display: flex;
-    flex-wrap: wrap; gap: 1rem;
+    flex-wrap: wrap; gap: 10px;
 }
 .skills li { 
     background: var(--primary);
     color: white;
     /* padding: .8rem 1.6rem; */
-    border-radius: 2rem;
+    border-radius: 20px;
     font-size: 0.9rem;
 }
 
 table { 
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    color:#000000;
 }
 th, td { 
-    padding: 1.4rem 1.8rem;
+    padding: 14px 18px;
     text-align: left;
 }
 
@@ -160,9 +167,9 @@ tr:hover {
     counter-reset: year;
 }
 .timeline li { 
-    padding-left: 4rem;
-    border-left: .3rem solid var(--primary);
-    margin-bottom: 2rem;
+    padding-left: 40px;
+    border-left: 3px solid var(--primary);
+    margin-bottom: 20px;
 }
 
 .timeline li:nth-child(odd) {
@@ -173,16 +180,54 @@ tr:hover {
     background-color: #15ff00;
 }
 
-/* .skills li::before {
+.skills li::before {
     counter-increment: year;
     text-align: left;
     content: "(✓)";
     
-} */
+}
 
 .playfair-display {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.project-card { 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+}
+.profile-img { 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.contactForm {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+header {
+    box-shadow:inset  0 2px 6px rgba(0, 0 , 0, 30);
+    /* background: linear-gradient(135deg, #000000 0%,#1e40af 100%); */
+}
+
+footer {
+    background: linear-gradient(135deg, #d11212 0%,#af1e1ee1 100%);
+}
+
+a { 
+    transition: color 0.3s ease;
+}
+.project-card { 
+    transition: transform 0.3s, box-shadow 0.3s
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+}
+button { 
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background: #1e40af;
+    transform: scale(1.03);
 }
