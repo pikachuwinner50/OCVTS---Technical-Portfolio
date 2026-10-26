@@ -1,6 +1,6 @@
-/* * {
+* {
   border: .1rem solid red;
-} */
+}
 /* for alternate "devtools" :D */
 
 
@@ -10,8 +10,9 @@ body {
     font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
     line-height: 1.6;
     background: linear-gradient(to right, #f8fafc, #e2e8f0)
+    position: fixed
+    padding: 3rem, 15rem;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -74,6 +75,11 @@ section {
 
 nav {
     padding: 15px 0;
+    position: sticky; top: 0;
+    z-index: 100;
+    background: var(--dark);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #f59e0b;
 }
 
 aside {
@@ -86,12 +92,22 @@ aside {
     border-radius: 8px;
     border: 1px solid #cbd5e1;
     border-radius: 6px image;
+    background-color: #a59797;
+    position: relative;
+}
+.badge {
+    position: absolute; top: 15px; right: 15px;
+    background: var(--accent); color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transform: rotate(-5deg);
 }
 
 .container {
     max-width: 400rem;
     margin: 0 auto;
     padding: 0 20px;
+    background-color: #1e40af   ;
 }
 
 
@@ -123,12 +139,14 @@ nav a {
 blockquote { 
     font-style: italic;
     line-height: 1.8;
+    background-color: lightblue;
 }
 
 .skills { 
     list-style: none;
     display: flex;
     flex-wrap: wrap; gap: 10px;
+    background-color: darkred;
 }
 .skills li { 
     background: var(--primary);
@@ -136,6 +154,7 @@ blockquote {
     /* padding: .8rem 1.6rem; */
     border-radius: 20px;
     font-size: 0.9rem;
+    background-color: palegreen;
 }
 
 table { 
@@ -230,4 +249,29 @@ button {
 button:hover {
     background: #1e40af;
     transform: scale(1.03);
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 12px;
+    background-color: yellow;
+    cursor: pointer;
+}
+
+#backToTop::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 14px;
+    border: 10px solid transparent;
+    border-top-color: yellow;
+}
+
+#backToTop:hover {
+    background-color: yellow;
 }
