@@ -1,6 +1,7 @@
 * {
-  border: .1rem solid red;
+    border: .1rem solid red;
 }
+
 /* for alternate "devtools" :D */
 
 
@@ -9,55 +10,66 @@ body {
     color: #1e293b;
     font-family: (-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
     line-height: 1.6;
-    background: linear-gradient(to right, #f8fafc, #e2e8f0)
-    position: fixed
-    padding: 3rem, 15rem;
+    background: linear-gradient(to right, #f8fafc, #e2e8f0) position: fixed padding: 3rem, 15rem;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-code, pre, kbd, samp, .technical-term {
+code,
+pre,
+kbd,
+samp,
+.technical-term {
     font-family: 'Courier New', monospace;
 }
 
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
     font-family: inherit;
 }
 
-h1 { 
+h1 {
     /* color: #0efcf0; */
     font-size: 3rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    background: linear-gradient(135deg, #000000 0%,#1e40af 100%);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #000000 0%, #1e40af 100%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent
 }
 
-h2 { 
+h2 {
     color: #0efcf0;
     margin-bottom: 20px;
     margin-top: 0px;
 }
 
-h3 { 
+h3 {
     color: #0efcf0;
     font-weight: 600;
 }
 
-a { 
-    var(--primary); 
+a {
+    var(--primary);
     text-decoration: none;
 
 }
 
-a:hover { 
+a:hover {
     color: #f59e0b;
     text-decoration: underline;
 }
@@ -65,7 +77,7 @@ a:hover {
 a:visited {
     color: slightly darker shade of #f59e0b;
     transition: color 0.3s ease;
- }
+}
 
 section {
     padding: 60px 0;
@@ -75,10 +87,11 @@ section {
 
 nav {
     padding: 15px 0;
-    position: sticky; top: 0;
+    position: sticky;
+    top: 0;
     z-index: 100;
     background: var(--dark);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #f59e0b;
 }
 
@@ -95,9 +108,13 @@ aside {
     background-color: #a59797;
     position: relative;
 }
+
 .badge {
-    position: absolute; top: 15px; right: 15px;
-    background: var(--accent); color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent);
+    color: white;
     padding: 4px 12px;
     border-radius: 20px;
     transform: rotate(-5deg);
@@ -107,19 +124,21 @@ aside {
     max-width: 400rem;
     margin: 0 auto;
     padding: 0 20px;
-    background-color: #1e40af   ;
+    background-color: #1e40af;
 }
 
 
-h1 { 
-    font-size: 25px; 
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+h1 {
+    font-size: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-h2 { 
+
+h2 {
     font-size: 20px;
 }
-p { 
-    font-size: 10px; 
+
+p {
+    font-size: 10px;
 }
 
 html {
@@ -127,28 +146,32 @@ html {
     font-size: 62.5%;
 }
 
-.tagline { 
+.tagline {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-nav a { 
+
+nav a {
     text-transform: uppercase;
     font-size: 0.85rem;
 
 }
-blockquote { 
+
+blockquote {
     font-style: italic;
     line-height: 1.8;
     background-color: lightblue;
 }
 
-.skills { 
+.skills {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; gap: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
     background-color: darkred;
 }
-.skills li { 
+
+.skills li {
     background: var(--primary);
     color: white;
     /* padding: .8rem 1.6rem; */
@@ -157,13 +180,15 @@ blockquote {
     background-color: palegreen;
 }
 
-table { 
+table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    color:#000000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: #000000;
 }
-th, td { 
+
+th,
+td {
     padding: 14px 18px;
     text-align: left;
 }
@@ -173,19 +198,20 @@ th {
     color: white;
 }
 
-tr:nth-child(even) { 
-    background: #f1f5f9; 
+tr:nth-child(even) {
+    background: #f1f5f9;
 }
 
-tr:hover { 
-    background: #a59797; 
+tr:hover {
+    background: #a59797;
 }
 
-.timeline { 
+.timeline {
     list-style: none;
     counter-reset: year;
 }
-.timeline li { 
+
+.timeline li {
     padding-left: 40px;
     border-left: 3px solid var(--primary);
     margin-bottom: 20px;
@@ -203,49 +229,54 @@ tr:hover {
     counter-increment: year;
     text-align: left;
     content: "(✓)";
-    
+
 }
 
 .playfair-display {
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.project-card { 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+.project-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
 }
-.profile-img { 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+.profile-img {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contactForm {
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 header {
-    box-shadow:inset  0 2px 6px rgba(0, 0 , 0, 30);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 30);
     /* background: linear-gradient(135deg, #000000 0%,#1e40af 100%); */
 }
 
 footer {
-    background: linear-gradient(135deg, #d11212 0%,#af1e1ee1 100%);
+    background: linear-gradient(135deg, #d11212 0%, #af1e1ee1 100%);
 }
 
-a { 
+a {
     transition: color 0.3s ease;
 }
-.project-card { 
+
+.project-card {
     transition: transform 0.3s, box-shadow 0.3s
 }
+
 .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
 }
-button { 
+
+button {
     transition: background 0.3s, transform 0.2s;
 }
+
 button:hover {
     background: #1e40af;
     transform: scale(1.03);
@@ -274,4 +305,35 @@ button:hover {
 
 #backToTop:hover {
     background-color: yellow;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap
+}
+
+nav li {
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    grid: fill;
+    grid-template-rows: masonry;
+}
+
+.skills-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 30px;
 }
