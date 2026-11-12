@@ -10,59 +10,60 @@
     <meta name="author" content="Your name">
     <meta name="description" content="A portfolio showcasing my web development work.">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/copyright.js"></script>
     <title>Home Page</title>
 </head>
 
 <body>
-    <!-- Portfolio Website -->
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About Me</a></li>
-        </ul>
-    </nav>
-    <!-- Header / Hero Section-->
-    <header>
-        <!-- Hero Content Goes Here -->
-        <h1>Jacob Hadley</h1>
-        <h2>Professional Coding Portfolio Website</h2>
-        <p>Hello, I am Jacob <br> and this is my website!</p>
-    </header>
+    <main>
+        <!-- Portfolio Website -->
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>
+        <!-- Header / Hero Section-->
+        <header>
+            <!-- Hero Content Goes Here -->
+            <h1>Jacob Hadley</h1>
+            <h2>Professional Coding Portfolio Website</h2>
+            <p>Hello, I am Jacob <br> and this is my website!</p>
+        </header>
 
-    <!-- About Section -->
-    <!--<main>
-             <section id="about">
-                <h2>About Me</h2>
-            
-            <--    Add Paragraphs here ->
-                <p>I, <strong>Jacob Hadley</strong>, was born in the year 2009, in the month of May. I have taken Javascript and Python classes in my Junior year of high School. This 
-                    year I am learning HTML and PHP.</p>
-                <p>My favorite video games are: Star Wars: The Old Republic, Star Wars: Empire at War, Stellaris, and Total War: Warhammer 3. My favorite
-                    food is Pizza and my favorite anime is <em>Code Geass</em>.</p>
-                <p>This paragraph is split <br> into two different lines.</p>
-                <p>My favorite quote</p>
-            
-                <blockquote>
-                    "I feel all thin, sort of stretched, if you know what I mean: like butter that has been scraped over too much bread." - Bilbo Baggins to Gandalf the Gray
-                </blockquote>
-            
-                <cite>The Fellowship of the Ring, book 1, chapter 1</cite>
-        </section> -->
-    <!-- Projects Section-->
-    <!-- Contact Section -->
+
+        <button onclick="sayHello()">Click Me to Say Hello</button>
+        <button onclick="PrintStuff()">Click Me to Print Stuff</button>
+        <button onclick="ClearStuff()">Click Me to Clear Stuff</button>
+
     </main>
     <button id="backToTop">&#8679;</button>
     <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year">2023</span> Jacob Hadley</p>
+        <p>&copy;
+        <p>Today: <time id="current-date"></time></p>
+        <p>Last updated: <time id="last-updated"></time></p>
     </footer>
 </body>
 <script>
-    getCurrentYear();
+    console.time("Begin.");
+    // document.getElementById("year").textContent = getCurrentYear(); 
     console.log("Welcome to Jacob Hadley's Portfolio!");
     console.warn("Congratulation! YOU FOUND THE SECRET CONSOLE MESSAGE!");
+    console.table([
+        { Skills: "Java", },
+        { Skills: "Python", },
+        { Skills: "Javascript", },
+        { Skills: "HTML", },
+        { Skills: "CSS", },
+        { Skills: "PHP", }
+
+    ]);
+    document.getElementById("current-date").textContent = getCurrentDate();
+    document.getElementById("last-updated").textContent = getLastUpdatedDate();
+    console.timeEnd("Begin.");
 </script>
 
 </html>
