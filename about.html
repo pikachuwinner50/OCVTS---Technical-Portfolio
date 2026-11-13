@@ -103,16 +103,14 @@
     <section id="contact">
         <h2>Contact Me</h2>
 
-        <form id="contactForm">
-            <!-- Form fields here -->
-            <form action="#" method="POST">
+        <form id="contactForm" action="#" method="POST" novalidate>
                 <input type="text" name="name" placeholder="Your Name" autocomplete="name">
                 <br>
-                <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
+                <input type="email" name="email" placeholder="Your Email" autocomplete="email">
                 <br>
                 <textarea name="message" rows="5" placeholder="Your Message"></textarea>
                 <br>
-                <button type="submit" onclick="this.disabled = true;">Send Message 🚀</button>
+                <button type="submit">Send Message 🚀</button>
                 <br>
                 <button type="button">Clear Form</button>
                 <br>
@@ -152,7 +150,7 @@
                     <option value="Friend"></option>
                 </datalist>
                 <br>
-            </form>
+        </form>
             <button id="backToTop">&#8679;</button>
             <!-- Footer -->
 </body>
