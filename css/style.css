@@ -20,6 +20,11 @@ body {
     line-height: 1.6;
 }
 
+body.dark-theme {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
 h1,
 h2,
 h3,
@@ -109,6 +114,24 @@ aside {
     border-radius: 6px image;
     background-color: #a59797;
     position: relative;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.project-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card[hidden] {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: none;
+    }
 }
 
 .badge {
