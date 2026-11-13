@@ -122,6 +122,16 @@ aside {
     transform: rotate(-5deg);
 }
 
+.project-status-badge {
+    display: inline-block;
+    background: #1e40af;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    vertical-align: middle;
+}
+
 .container {
     max-width: 400rem;
     margin: 0 auto;
