@@ -158,8 +158,6 @@ function initializePage() {
     if (skillsList) {
         const extraSkills = {
             SkillsExtra: ["JavaScript"],
-            Yes: ["I dunno"],
-            Tools: ["Git"]
         };
 
         Object.entries(extraSkills).forEach(([category, skills]) => {
@@ -296,13 +294,10 @@ const projects = [
 initializePage();
 
 const skills = {
-    frontend: ["HTML", "CSS", "JavaScript", "React"],
-    backend: ["Node.js", "Python"],
-    tools: ["Git", "VS Code"]
+    Skills: ["HTML", "CSS", "JavaScript"],
 };
 
-console.log("Frontend skill count:", skills.frontend.length);
-skills.backend.push("Express.js");
+console.log("Frontend skill count:", skills.Skills.length);
 skills.listAll = function () {
     return Object.entries(this)
         .filter(([, value]) => Array.isArray(value))
