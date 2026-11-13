@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project page</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/projects.js" defer></script>
+    <script src="js/script.js" defer></script>
     <style>
         body {
             background-color: #f8fafc;
@@ -33,7 +33,16 @@
             <h1>Jacob Hadley</h1>
             <h2>Professional Coding Portfolio Website</h2>
             <p>Hello, I am Jacob <br> and this is my website!</p>
+            <button id="theme-toggle">Toggle Theme</button>
+            <label for="project-filter">Filter projects:</label>
+            <select id="project-filter">
+                <option value="all">All</option>
+                <option value="web">Web</option>
+                <option value="app">App</option>
+            </select>
         </header>
+        <h2>Featured Projects <span id="project-status-counts" class="project-status-badge"
+                aria-live="polite"></span></h2>
         <h2>Featured Projects <span id="project-status-counts" class="project-status-badge"
                 aria-live="polite"></span></h2>
         <!-- Featured projects go here -->
@@ -109,9 +118,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Table goes here -->
-            <p id="table-row-count" aria-live="polite"></p>
-            <table>
+
+        <table>
                 <thead>
                     <tr>
                         <th>
@@ -154,9 +162,8 @@
                         <td>Not started</td>
                     </tr>
                 </tbody>
-            </table>
-            </section>
-            <button id="backToTop">&#8679;</button>
+        </table>
+        <button id="backToTop">&#8679;</button>
     </main>
 </body>
 
