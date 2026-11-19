@@ -291,6 +291,15 @@ const projects = [
     }
 ].sort((firstProject, secondProject) => firstProject.year - secondProject.year);
 
+function showRandomProject() {
+    const index = Math.floor(Math.random() * projects.length);
+    const randomProjectTitle = document.getElementById("random-project-title");
+
+    if (randomProjectTitle) {
+        randomProjectTitle.random - project - title = projects[index].title;
+    }
+}
+
 initializePage();
 
 const skills = {
