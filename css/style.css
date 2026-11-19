@@ -114,8 +114,8 @@ aside {
     border-radius: 6px image;
     background-color: #a59797;
     position: relative;
-    opacity: 0;
-    transform: translateY(8px);
+    /* opacity: 0; */
+    transform: none;
     transition: opacity 250ms ease, transform 250ms ease;
 }
 
@@ -147,7 +147,7 @@ aside {
 
 .project-status-badge {
     display: inline-block;
-    background: #1e40af;
+    /* background: #1e40af; */
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
