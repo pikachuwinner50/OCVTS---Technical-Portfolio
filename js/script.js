@@ -17,7 +17,12 @@ function getCurrentDate() {
 }
 
 function getLastUpdatedDate() {
-    return formatDate(new Date(document.lastModified));
+    const now = new Date();
+    return `${now.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    })}`;
 }
 
 function validateForm() {
@@ -89,42 +94,86 @@ function escapeHTML(value) {
     })[character]);
 }
 
-function renderFeaturedProjects(container) {
-    const featuredProjects = projects.filter((project) => project.featured);
-    const projectCardsHTML = featuredProjects.map((project) => {
-        const technologies = project.tech.map(escapeHTML).join(", ");
-        const githubLink = project.links.github
-            ? `<a href="${escapeHTML(project.links.github)}" target="_blank" rel="noopener noreferrer">GitHub</a>`
-            : "";
-        const liveLink = project.links.live
-            ? `<a href="${escapeHTML(project.links.live)}" target="_blank" rel="noopener noreferrer">Live demo</a>`
-            : "";
-        const links = [githubLink, liveLink].filter(Boolean).join(" ");
+function renderFeaturedProjects(container, projectList = projects) {
+    container.innerHTML = "";
 
-        return `
-            <article class="project-card" data-category="${escapeHTML(project.category)}">
-                <span class="badge">Featured</span>
-                <img src="${escapeHTML(project.image)}" alt="Project preview for ${escapeHTML(project.title)}"
-                    class="project-card__image" width="400" height="400">
-                <figcaption>Project preview for ${escapeHTML(project.title)}</figcaption>
-                <div class="project-card__content">
-                    <h3>${escapeHTML(project.title)}</h3>
-                    <p>${escapeHTML(project.description)}</p>
-                    <div class="project-card__details">
-                        <p><strong>Technologies:</strong> ${technologies}</p>
-                        <p><strong>Year:</strong> ${escapeHTML(project.year)}</p>
-                        ${links ? `<p>${links}</p>` : ""}
-                    </div>
-                </div>
-            </article>`;
-    }).join("");
+    projectList.forEach((project) => {
+        const card = document.createElement("div");
+        card.className = "project-card";
+        card.dataset.category = project.category;
 
-    container.innerHTML = projectCardsHTML;
-    container.querySelectorAll(".project-card").forEach((card) => {
+        if (project.featured) {
+            const badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = "Featured";
+            card.append(badge);
+        }
+
+        const image = document.createElement("img");
+        image.src = project.image;
+        image.alt = `Project preview for ${project.title}`;
+        image.className = "project-card__image";
+        image.width = 400;
+        image.height = 400;
+
+        const caption = document.createElement("figcaption");
+        caption.textContent = `Project preview for ${project.title}`;
+
+        const content = document.createElement("div");
+        content.className = "project-card__content";
+
+        const title = document.createElement("h3");
+        title.textContent = project.title;
+
+        const description = document.createElement("p");
+        description.textContent = project.description;
+
+        const details = document.createElement("div");
+        details.className = "project-card__details";
+
+        const technologies = document.createElement("p");
+        const technologyLabel = document.createElement("strong");
+        technologyLabel.textContent = "Technologies: ";
+        technologies.append(technologyLabel, document.createTextNode(project.tech.join(", ")));
+
+        const year = document.createElement("p");
+        const yearLabel = document.createElement("strong");
+        yearLabel.textContent = "Year: ";
+        year.append(yearLabel, document.createTextNode(String(project.year)));
+
+        details.append(technologies, year);
+
+        const projectLinks = [
+            ["GitHub", project.links.github],
+            ["Live demo", project.links.live]
+        ].filter(([, url]) => url);
+
+        if (projectLinks.length > 0) {
+            const linksParagraph = document.createElement("p");
+
+            projectLinks.forEach(([label, url], index) => {
+                if (index > 0) {
+                    linksParagraph.append(" ");
+                }
+
+                const link = document.createElement("a");
+                link.href = url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = label;
+                linksParagraph.append(link);
+            });
+
+            details.append(linksParagraph);
+        }
+
+        content.append(title, description, details);
+        card.append(image, caption, content);
+        container.append(card);
+
         requestAnimationFrame(() => card.classList.add("is-visible"));
     });
 }
-
 function initializePage() {
     isDark = localStorage.getItem("theme") === "dark";
     document.body.classList.toggle("dark-theme", isDark);
@@ -138,13 +187,49 @@ function initializePage() {
     document.getElementById("say-hello")?.addEventListener("click", () => {
         alert("Thanks for visiting!");
     });
-    document.getElementById("print-page")?.addEventListener("click", () => window.print());
+    document.getElementById("print-page")?.addEventListener("click", printPortfolio);    
     document.getElementById("print-form")?.addEventListener("click", () => window.print());
     document.getElementById("clear-console")?.addEventListener("click", () => console.clear());
 
     document.getElementById("toggle-contact")?.addEventListener("click", () => {
         const contactSection = document.getElementById("contact");
         contactSection.style.display = contactSection.style.display === "none" ? "block" : "none";
+
+    document.querySelectorAll(".message-input").forEach((textarea) => {
+    const counter = textarea.nextElementSibling?.querySelector(".char-count");
+
+    if (!counter) {
+        return;
+    }
+
+    textarea.addEventListener("input", function () {
+        const count = this.value.length;
+        counter.textContent = count;
+        counter.style.color = count > 450 ? "red" : "";
+    });
+});
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+function updateActiveNavLink() {
+    let currentSectionId = "";
+
+    sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 100) {
+            currentSectionId = section.id;
+        }
+    });
+
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    const activeLink = Array.from(navLinks).find(
+        (link) => link.hash === `#${currentSectionId}`
+    );
+    activeLink?.classList.add("active");
+}
+
+window.addEventListener("scroll", updateActiveNavLink);
+updateActiveNavLink();
     });
 
     const contactForm = document.getElementById("contactForm");
@@ -152,6 +237,7 @@ function initializePage() {
         if (validateForm() === false) {
             event.preventDefault();
         }
+
     });
 
     const skillsList = document.querySelector("#skillsList");
@@ -291,9 +377,53 @@ const projects = [
     }
 ].sort((firstProject, secondProject) => firstProject.year - secondProject.year);
 
+function showRandomProject() {
+    const banner = document.querySelector("#random-project-banner");
+    if (!banner || projects.length === 0) {
+        return;
+    }
 
+    const previousTitle = localStorage.getItem("previousRandomProjectTitle");
+    const choices = projects.length > 1
+        ? projects.filter((project) => project.title !== previousTitle)
+        : projects;
+
+    const index = Math.floor(Math.random() * choices.length);
+    const project = choices[index];
+
+    console.log("Today's featured project: " + project.title);
+    renderFeaturedProjects(banner, [project]);
+    localStorage.setItem("previousRandomProjectTitle", project.title);
+}
+
+document.querySelectorAll('nav a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+        const targetId = link.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
+        const navHeight = document.querySelector("nav")?.offsetHeight ?? 0;
+        const targetTop =
+            target.getBoundingClientRect().top + window.scrollY - navHeight;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: "smooth"
+        });
+    });
+});
+function printPortfolio() {
+    window.print();
+}
 
 initializePage();
+
+showRandomProject();
 
 const skills = {
     Skills: ["HTML", "CSS", "JavaScript"],
@@ -308,3 +438,31 @@ skills.listAll = function () {
 
 console.log("All skills:", skills.listAll());
 console.log("Skills JSON:", JSON.stringify(skills));
+
+const rawInput = " Alex Morgan ";
+
+const trimmedInput = rawInput.trim();
+console.log("Trimmed:", trimmedInput);
+
+const lowercaseInput = trimmedInput.toLowerCase();
+console.log("Lowercase:", lowercaseInput);
+
+const inputWithoutNumbers = lowercaseInput.replace(/[0-9]/g, "");
+console.log("Numbers removed:", inputWithoutNumbers);
+
+function capitalizeWords(value) {
+    return value.replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
+}
+
+const capitalizedInput = capitalizeWords(inputWithoutNumbers);
+console.log("Capitalized:", capitalizedInput);
+
+const isValidInput = /^[A-Za-z ]+$/.test(trimmedInput);
+console.log("Contains only letters and spaces:", isValidInput);
+
+// function showWelcomeMessage() {
+//     alert("Thanks for exploring my portfolio!");
+// }
+
+// setTimeout(showWelcomeMessage, 5000);
+

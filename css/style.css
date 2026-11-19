@@ -372,3 +372,27 @@ nav li {
     gap: 8px;
     padding: 30px;
 }
+
+@media print {
+    body {
+        background: #fff !important;
+    }
+
+    body * {
+        color: #000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    nav,
+    button {
+        display: none !important;
+    }
+}
+
+nav a.active {
+    color: #1e40af;
+    font-weight: bold;
+    border-bottom: 2px solid currentColor;
+}
